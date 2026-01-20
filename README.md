@@ -30,8 +30,11 @@ Unzip the file so you have the folder: `ucd-schedulebuilder-rmp/`
 
 ### Step 3 - Open Chrome Extensions Page
 
-In Chrome, go to:
-[chrome://extensions](chrome://extensions)
+In Chrome, go to extensions manager:
+
+```
+chrome://extensions
+```
 
 ---
 
