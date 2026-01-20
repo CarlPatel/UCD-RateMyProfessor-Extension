@@ -1,0 +1,93 @@
+.rmp-pill {
+  position: relative;
+  display: inline-block;
+  margin-left: 8px;
+  padding: 3px 8px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+  background: #2b6cb0;
+  color: white;
+  line-height: 1.4;
+  user-select: none;
+}
+
+/* Tooltip (hidden by default) */
+.rmp-tooltip {
+  position: absolute;
+  bottom: 125%;
+  left: 50%;
+  background: #111;
+  color: white;
+  padding: 10px 12px;
+  border-radius: 10px;
+  font-size: 12px;
+  min-width: 160px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;   /* cannot be hovered unless pill is hovered */
+  transition: opacity 0.15s ease, transform 0.15s ease;
+  transform: translateX(-50%) translateY(6px);
+  z-index: 9999;
+}
+
+/* Tooltip arrow */
+.rmp-tooltip::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 6px;
+  border-style: solid;
+  border-color: #111 transparent transparent transparent;
+}
+
+/* Show tooltip only when pill is hovered */
+.rmp-pill:hover .rmp-tooltip {
+  opacity: 1;
+  pointer-events: auto;   /* now tooltip can be hovered/clicked */
+  transform: translateX(-50%) translateY(0);
+  cursor: pointer;
+}
+
+/* Keep tooltip visible while hovering tooltip (after pill hover) */
+.rmp-pill:hover .rmp-tooltip,
+.rmp-pill .rmp-tooltip:hover {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* Tooltip header */
+.rmp-tooltip-name {
+  font-weight: 700;
+  font-size: 13px;
+  margin-bottom: 6px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  padding-bottom: 4px;
+  text-align: center;
+}
+
+/* Tooltip rows */
+.rmp-tooltip-row {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 4px;
+  gap: 12px;
+}
+
+.rmp-tooltip-row span {
+  opacity: 0.8;
+}
+
+.rmp-tooltip-row strong {
+  font-weight: 600;
+}
+
+/* "Not found" message */
+.rmp-tooltip-notfound {
+  margin-top: 8px;
+  font-weight: 600;
+  color: #60a5fa;
+  text-align: center;
+}
